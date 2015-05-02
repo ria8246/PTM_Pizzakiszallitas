@@ -12,7 +12,7 @@ namespace PTM_Pizzakiszallitas
 
         public Pizza PizzatSut ( PizzaInfo pizzaInfo ) {
 
-            pizza = new Pizza( pizzaInfo.GetAtmero(), pizzaInfo.GetFeltet() );
+            Pizza pizza = new Pizza( pizzaInfo.GetAtmero(), pizzaInfo.GetFeltet() );
             return pizza;
 
         }

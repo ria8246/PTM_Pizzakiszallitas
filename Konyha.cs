@@ -10,6 +10,7 @@ namespace PTM_Pizzakiszallitas
         public Konyha() {
         }
 
+        //Létrehoz egy uj pizzat, majd visszaadja.
         public Pizza PizzatSut ( PizzaInfo pizzaInfo ) {
 
             Pizza pizza = new Pizza( pizzaInfo.GetAtmero(), pizzaInfo.GetFeltet() );

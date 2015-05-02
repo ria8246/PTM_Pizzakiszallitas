@@ -36,6 +36,8 @@ namespace PTM_Pizzakiszallitas
 				iroda.FutartIndit (KovetkezoSzabadFutar, varos); // Planned.
 			}
 
+			// TODO: Loop and Timer...
+
 			return;
 		}
 

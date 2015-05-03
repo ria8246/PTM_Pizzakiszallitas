@@ -15,5 +15,22 @@ namespace PTM_Pizzakiszallitas
 		{
 			InitializeComponent ();
 		}
+
+		public void ClearOutput ()
+		{
+			tbPizzaKiszallitasOutput.Clear ();
+
+			return;
+		}
+
+		public void AppendLineToOutput (string ToAppend)
+		{
+			string NewLine = Environment.NewLine;
+
+			tbPizzaKiszallitasOutput.AppendText (ToAppend);
+			tbPizzaKiszallitasOutput.AppendText (NewLine);
+
+			return;
+		}
 	}
 }

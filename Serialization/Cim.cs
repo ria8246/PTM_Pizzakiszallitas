@@ -6,12 +6,24 @@ using System.Xml.Serialization;
 
 namespace PTM_Pizzakiszallitas.Serialization
 {
-	class Cim
+	[Serializable]
+	public class Cim
 	{
-		[XmlAttribute]
 		public string VarosNev { get; set; }
 		public int IrSzam { get; set; }
 		public string UtcaNev { get; set; }
 		public int HazSzam { get; set; }
+
+		public Cim ()
+		{
+		}
+
+		public Cim (string VarosNev, int IrSzam, string UtcaNev, int HazSzam)
+		{
+			this.VarosNev = VarosNev;
+			this.IrSzam = IrSzam;
+			this.UtcaNev = UtcaNev;
+			this.HazSzam = HazSzam;
+		}
 	}
 }

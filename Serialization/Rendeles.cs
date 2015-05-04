@@ -10,7 +10,7 @@ namespace PTM_Pizzakiszallitas.Serialization
 	[XmlRootAttribute ("Rendelesek", Namespace="PTM", IsNullable=false)]
 	class Rendeles
 	{
-		public PizzaInfo pizzaInfo;
+		public Pizza pizzaInfo;
 		public Cim cim;
 	}
 }

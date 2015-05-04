@@ -15,7 +15,7 @@ namespace PTM_Pizzakiszallitas.Serialization
 
 			Rendeles tesztRendeles = new Rendeles ();
 
-			PizzaInfo pi = new PizzaInfo ();
+			Pizza pi = new Pizza ();
 			pi.Atmero = 26;
 			pi.Feltet = "sajtos";
 

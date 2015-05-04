@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 
 namespace PTM_Pizzakiszallitas.Serialization
 {
-	class PizzaInfo
+	class Pizza
 	{
 		[XmlAttribute]
 		public int Atmero { get; set; }

@@ -7,39 +7,12 @@ namespace PTM_Pizzakiszallitas
 {
 	class PizzaSzallito
 	{
-		// Member declarations
+		// Private member declarations
 		Iroda iroda = null;
 		Konyha konyha = null;
 		Rendelesek rendelesek = null;
 		Futarok futarok = null;
 		Varos varos = null;
-		
-		// Public methods
-		public PizzaSzallito ()
-		{
-			Initialise ();
-		}
-
-		public void MainLoop ()
-		{
-			Pizza ElkeszitettPizza = null;
-			Futar KovetkezoSzabadFutar = null;
-			Utvonalterv KiszallitasiUtvonal = null;
-
-			KiszallitasiUtvonal = iroda.UtvonalTervezes (rendelesek);
-			/* ElkeszitettPizza = */ iroda.PizzatKeszittet (rendelesek, konyha); // Void return!!!
-			KovetkezoSzabadFutar = futarok.KovetkezoFutar (); // Not implemented!
-			if (KovetkezoSzabadFutar != null)
-			{
-				konyha.PizzatAtad (ElkeszitettPizza, KovetkezoSzabadFutar); // Not implemented!!!
-				iroda.UtvonaltervAtadasa (KiszallitasiUtvonal, KovetkezoSzabadFutar); // Not implemented!!!
-				iroda.FutartIndit (KovetkezoSzabadFutar, varos); // Planned.
-			}
-
-			// TODO: Loop and Timer...
-
-			return;
-		}
 
 		// Private methods
 		private void Initialise ()
@@ -50,6 +23,30 @@ namespace PTM_Pizzakiszallitas
 			rendelesek = new Rendelesek ();
 			futarok = new Futarok ();
 			varos = new Varos ();
+
+			return;
+		}
+		
+		// Public methods
+		public PizzaSzallito ()
+		{
+			Initialise ();
+		}
+
+		public void MainLoop ()
+		{
+			Futar KovetkezoSzabadFutar = null;
+			Utvonalterv KiszallitasiUtvonal = null;
+
+			KovetkezoSzabadFutar = futarok.KovetkezoFutar (); // Not implemented!
+			KiszallitasiUtvonal = iroda.UtvonalTervezes (rendelesek);
+			if (KovetkezoSzabadFutar != null)
+			{
+				iroda.UtvonaltervAtadasa (KiszallitasiUtvonal, KovetkezoSzabadFutar); // Not implemented!!!
+				iroda.FutartIndit (KovetkezoSzabadFutar); // Planned.
+			}
+
+			// TODO: Loop and Timer...
 
 			return;
 		}

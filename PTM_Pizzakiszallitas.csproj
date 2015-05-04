@@ -64,9 +64,7 @@
     <Compile Include="CityVisual.xaml.cs">
       <DependentUpon>CityVisual.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dummy.cs" />
     <Compile Include="Iroda.cs" />
-    <Compile Include="Konyha.cs" />
     <Compile Include="MainAppForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialization\Cim.cs" />
     <Compile Include="Serialization\DataSerializer.cs" />
-    <Compile Include="Serialization\PizzaInfo.cs" />
+    <Compile Include="Serialization\Pizza.cs" />
     <Compile Include="Serialization\Rendeles.cs" />
     <EmbeddedResource Include="MainAppForm.resx">
       <DependentUpon>MainAppForm.cs</DependentUpon>

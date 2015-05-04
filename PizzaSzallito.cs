@@ -40,8 +40,8 @@ namespace PTM_Pizzakiszallitas
 			KiszallitasiUtvonal = iroda.UtvonalTervezes (rendelesek);
 			if (KovetkezoSzabadFutar != null)
 			{
-				iroda.UtvonaltervAtadasa (KiszallitasiUtvonal, KovetkezoSzabadFutar); // Not implemented!!!
-				iroda.FutartIndit (KovetkezoSzabadFutar); // Planned.
+				// iroda.UtvonaltervAtadasa (KiszallitasiUtvonal, KovetkezoSzabadFutar); // Not implemented!!!
+				// iroda.FutartIndit (KovetkezoSzabadFutar); // Planned.
 			}
 
 			// TODO: Loop and Timer...

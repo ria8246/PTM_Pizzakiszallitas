@@ -1,0 +1,9 @@
+D:\GitHub\PTM_Pizzakiszallitas\obj\Debug\PTM_Pizzakiszallitas.csprojResolveAssemblyReference.cache
+D:\GitHub\PTM_Pizzakiszallitas\obj\Debug\PTM_Pizzakiszallitas.PizzakiszallitasMainForm.resources
+D:\GitHub\PTM_Pizzakiszallitas\obj\Debug\PTM_Pizzakiszallitas.Properties.Resources.resources
+D:\GitHub\PTM_Pizzakiszallitas\obj\Debug\PTM_Pizzakiszallitas.csproj.GenerateResource.Cache
+D:\GitHub\PTM_Pizzakiszallitas\bin\Debug\PTM_Pizzakiszallitas.exe.config
+D:\GitHub\PTM_Pizzakiszallitas\bin\Debug\PTM_Pizzakiszallitas.exe
+D:\GitHub\PTM_Pizzakiszallitas\bin\Debug\PTM_Pizzakiszallitas.pdb
+D:\GitHub\PTM_Pizzakiszallitas\obj\Debug\PTM_Pizzakiszallitas.exe
+D:\GitHub\PTM_Pizzakiszallitas\obj\Debug\PTM_Pizzakiszallitas.pdb

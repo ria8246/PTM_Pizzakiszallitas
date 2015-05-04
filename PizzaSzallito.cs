@@ -9,7 +9,6 @@ namespace PTM_Pizzakiszallitas
 	{
 		// Private member declarations
 		Iroda iroda = null;
-		Konyha konyha = null;
 		Rendelesek rendelesek = null;
 		Futarok futarok = null;
 		Varos varos = null;
@@ -19,7 +18,6 @@ namespace PTM_Pizzakiszallitas
 		{
 			// TODO Rendeléseket XML-ből beolvasni...
 			iroda = new Iroda ();
-			konyha = new Konyha ();
 			rendelesek = new Rendelesek ();
 			futarok = new Futarok ();
 			varos = new Varos ();

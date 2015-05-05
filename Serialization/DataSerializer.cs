@@ -12,15 +12,15 @@ namespace PTM_Pizzakiszallitas.Serialization
 		private Rendelesek CreatePredefinedDataSets ()
 		{
 			#region Rendelések létrehozása
-			Rendeles tesztRendeles1 = new Rendeles (new Pizza (26, "sajtos"), new Cim ("Veszprém", 8200, "Egyetem", 10));
-			Rendeles tesztRendeles2 = new Rendeles (new Pizza (32, "kukoricás"), new Cim ("Veszprém", 8200, "Kemecse", 6));
-			Rendeles tesztRendeles3 = new Rendeles (new Pizza (12, "gombás"), new Cim ("Veszprém", 8200, "Lovassy", 20));
-			Rendeles tesztRendeles4 = new Rendeles (new Pizza (28, "sonkás"), new Cim ("Veszprém", 8200, "Bajcsy-Zsilinszky", 25));
-			Rendeles tesztRendeles5 = new Rendeles (new Pizza (23, "ananászos"), new Cim ("Veszprém", 8200, "Malomkő", 14));
+			Serialization.Rendeles tesztRendeles1 = new Serialization.Rendeles (new Serialization.Pizza (26, "sajtos"), new Serialization.Cim ("Veszprém", 8200, "Egyetem", 10));
+			Serialization.Rendeles tesztRendeles2 = new Serialization.Rendeles (new Serialization.Pizza (32, "kukoricás"), new Serialization.Cim ("Veszprém", 8200, "Kemecse", 6));
+			Serialization.Rendeles tesztRendeles3 = new Serialization.Rendeles (new Serialization.Pizza (12, "gombás"), new Serialization.Cim ("Veszprém", 8200, "Lovassy", 20));
+			Serialization.Rendeles tesztRendeles4 = new Serialization.Rendeles (new Serialization.Pizza (28, "sonkás"), new Serialization.Cim ("Veszprém", 8200, "Bajcsy-Zsilinszky", 25));
+			Serialization.Rendeles tesztRendeles5 = new Serialization.Rendeles (new Serialization.Pizza (23, "ananászos"), new Serialization.Cim ("Veszprém", 8200, "Malomkő", 14));
 			#endregion
 
 			#region Rendeléshez hozzáadás
-			Rendelesek rendelesek = new Rendelesek ();
+			Serialization.Rendelesek rendelesek = new Serialization.Rendelesek ();
 			rendelesek.AddRendeles (tesztRendeles1);
 			rendelesek.AddRendeles (tesztRendeles2);
 			rendelesek.AddRendeles (tesztRendeles3);
@@ -33,8 +33,8 @@ namespace PTM_Pizzakiszallitas.Serialization
 
 		public void CreateXMLDocument (string FileName)
 		{
-			Rendelesek rendelesek = CreatePredefinedDataSets ();
-			XmlSerializer serializer = new XmlSerializer (typeof (Rendelesek));
+			Serialization.Rendelesek rendelesek = CreatePredefinedDataSets ();
+			XmlSerializer serializer = new XmlSerializer (typeof (Serialization.Rendelesek));
 			TextWriter writer = new StreamWriter (FileName);
 			serializer.Serialize (writer, rendelesek);
 			writer.Close ();
@@ -44,9 +44,9 @@ namespace PTM_Pizzakiszallitas.Serialization
 
 		public Rendelesek ReadXMLDocument (string FileName)
 		{
-			XmlSerializer serializer = new XmlSerializer (typeof (Rendelesek));
+			XmlSerializer serializer = new XmlSerializer (typeof (Serialization.Rendelesek));
 			FileStream file = new FileStream (FileName, FileMode.Open);
-			Rendelesek readInput = (Rendelesek) serializer.Deserialize (file);
+			Serialization.Rendelesek readInput = (Serialization.Rendelesek) serializer.Deserialize (file);
 			file.Close ();
 
 			return readInput;

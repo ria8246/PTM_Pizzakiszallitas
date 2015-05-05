@@ -11,15 +11,15 @@ namespace PTM_Pizzakiszallitas.Serialization
 	public class Rendelesek
 	{
 		[XmlArray ("Rendelesek")]
-		[XmlArrayItem ("Rendeles", typeof (Rendeles))]
-		public List<Rendeles> rendelesek = null;
+		[XmlArrayItem ("Rendeles", typeof (Serialization.Rendeles))]
+		public List<Serialization.Rendeles> rendelesek = null;
 
 		public Rendelesek ()
 		{
-			rendelesek = new List<Rendeles> ();
+			rendelesek = new List<Serialization.Rendeles> ();
 		}
 
-		public void AddRendeles (Rendeles rendeles)
+		public void AddRendeles (Serialization.Rendeles rendeles)
 		{
 			rendelesek.Add (rendeles);
 

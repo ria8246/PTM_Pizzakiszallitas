@@ -37,7 +37,7 @@ namespace PTM_Pizzakiszallitas
 			Utvonalterv KiszallitasiUtvonal = null;
 
 			KovetkezoSzabadFutar = futarok.KovetkezoFutar (); // Not implemented!
-			KiszallitasiUtvonal = iroda.UtvonalTervezes (rendelesek);
+			// KiszallitasiUtvonal = iroda.UtvonalTervezes (rendelesek);
 			if (KovetkezoSzabadFutar != null)
 			{
 				// iroda.UtvonaltervAtadasa (KiszallitasiUtvonal, KovetkezoSzabadFutar); // Not implemented!!!

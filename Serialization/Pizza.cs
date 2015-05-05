@@ -6,10 +6,20 @@ using System.Xml.Serialization;
 
 namespace PTM_Pizzakiszallitas.Serialization
 {
-	class Pizza
+	[Serializable]
+	public class Pizza
 	{
-		[XmlAttribute]
 		public int Atmero { get; set; }
 		public string Feltet { get; set; }
+
+		public Pizza ()
+		{
+		}
+
+		public Pizza (int Atmero, string Feltet)
+		{
+			this.Atmero = Atmero;
+			this.Feltet = Feltet;
+		}
 	}
 }

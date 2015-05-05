@@ -7,19 +7,27 @@ namespace PTM_Pizzakiszallitas
 {
     class Futarok
     {
-        private Stack<Futar> stack;
+        private List<Futar> futarok;
 
         public Futarok() {
-            stack = new Stack<Futar>();
+            futarok = new List<Futar>();
             for (int i = 0; i < 4; i++)
             {
-                stack.Push(new Futar());
+                //futarok.Push(new Futar());
+                futarok.Add(new Futar());
             }
         }
 
-        public Futar KovetkezoFutar()
+        public Futar KovetkezoFutar(int index)
         {
-            return stack.Pop();
+            //return stack.Pop();
+
+            return futarok.ElementAt(index);
         }
+
+        
+
+        
+
     }
 }

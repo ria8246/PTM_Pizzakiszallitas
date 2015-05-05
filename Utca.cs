@@ -21,5 +21,9 @@ namespace PTM_Pizzakiszallitas
             this.utcaNev = utcaNev;
             this.cimek = cimek; //?
         }
+
+        public void CimHozzaadasa(Cim ujCim) {
+            cimek.Add(ujCim);
+        }
     }
 }

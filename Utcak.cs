@@ -13,5 +13,9 @@ namespace PTM_Pizzakiszallitas
             utcak = new List<Utca>();
         }
 
+        public void utcaHozzaadasa(Utca ujUtca) {
+            utcak.Add(ujUtca);
+        }
+
     }
 }

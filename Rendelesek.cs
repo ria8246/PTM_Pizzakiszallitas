@@ -8,10 +8,20 @@ namespace PTM_Pizzakiszallitas
 {
     class Rendelesek
     {
-        private List<Rendeles> rendelesek;
+        private Stack<Rendeles> rendelesek;
 
         public Rendelesek() {
-            rendelesek = new List<Rendeles>();
+            rendelesek = new Stack<Rendeles>();
+        }
+
+
+        public void RendelestHozzaad(Rendeles ujRendeles) 
+        {
+            rendelesek.Push(ujRendeles);
+        }
+
+        public Rendeles RendelestKivesz() {
+            return rendelesek.Pop();        
         }
     }
 }

@@ -13,5 +13,9 @@ namespace PTM_Pizzakiszallitas
             kiszallitando = new List<Rendeles>();
         }
 
+        public void RendelesHozzaadas(Rendeles hozzaadando) {
+            kiszallitando.Add(hozzaadando);
+        }
+
     }
 }

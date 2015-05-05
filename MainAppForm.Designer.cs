@@ -30,6 +30,7 @@
 		{
 			this.tbPizzaKiszallitasOutput = new System.Windows.Forms.TextBox();
 			this.lblPizzaKiszallitasOutput = new System.Windows.Forms.Label();
+			this.btnMainFormClose = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// tbPizzaKiszallitasOutput
@@ -50,11 +51,21 @@
 			this.lblPizzaKiszallitasOutput.TabIndex = 1;
 			this.lblPizzaKiszallitasOutput.Text = "PizzakiSzállítás kimenete:";
 			// 
+			// btnMainFormClose
+			// 
+			this.btnMainFormClose.Location = new System.Drawing.Point(550, 360);
+			this.btnMainFormClose.Name = "btnMainFormClose";
+			this.btnMainFormClose.Size = new System.Drawing.Size(75, 23);
+			this.btnMainFormClose.TabIndex = 2;
+			this.btnMainFormClose.Text = "Bezárás";
+			this.btnMainFormClose.UseVisualStyleBackColor = true;
+			// 
 			// PizzakiszallitasMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(637, 409);
+			this.Controls.Add(this.btnMainFormClose);
 			this.Controls.Add(this.lblPizzaKiszallitasOutput);
 			this.Controls.Add(this.tbPizzaKiszallitasOutput);
 			this.Name = "PizzakiszallitasMainForm";
@@ -68,6 +79,7 @@
 
 		private System.Windows.Forms.TextBox tbPizzaKiszallitasOutput;
 		private System.Windows.Forms.Label lblPizzaKiszallitasOutput;
+		private System.Windows.Forms.Button btnMainFormClose;
 	}
 }
 

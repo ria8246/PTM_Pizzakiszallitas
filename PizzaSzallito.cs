@@ -34,9 +34,9 @@ namespace PTM_Pizzakiszallitas
 		public void MainLoop ()
 		{
 			Futar KovetkezoSzabadFutar = null;
-			Utvonalterv KiszallitasiUtvonal = null;
+			// Utvonalterv KiszallitasiUtvonal = null;
 
-			KovetkezoSzabadFutar = futarok.KovetkezoFutar (); // Not implemented!
+			// KovetkezoSzabadFutar = futarok.KovetkezoFutar (); // Not implemented!
 			// KiszallitasiUtvonal = iroda.UtvonalTervezes (rendelesek);
 			if (KovetkezoSzabadFutar != null)
 			{

@@ -29,24 +29,25 @@
 		private void InitializeComponent ()
 		{
 			this.lstvwRendelesek = new System.Windows.Forms.ListView();
+			this.PizzaAtmero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.PizzaFeltet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.CimVarosNev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.VarosIrSzam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.CimUtcaNev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.CimHazSzam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.btnDataDisplayerClose = new System.Windows.Forms.Button();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.SuspendLayout();
 			// 
 			// lstvwRendelesek
 			// 
 			this.lstvwRendelesek.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
+            this.PizzaAtmero,
+            this.PizzaFeltet,
+            this.CimVarosNev,
+            this.VarosIrSzam,
+            this.CimUtcaNev,
+            this.CimHazSzam});
+			this.lstvwRendelesek.FullRowSelect = true;
 			this.lstvwRendelesek.GridLines = true;
 			this.lstvwRendelesek.Location = new System.Drawing.Point(12, 12);
 			this.lstvwRendelesek.Name = "lstvwRendelesek";
@@ -55,9 +56,33 @@
 			this.lstvwRendelesek.UseCompatibleStateImageBehavior = false;
 			this.lstvwRendelesek.View = System.Windows.Forms.View.List;
 			// 
+			// PizzaAtmero
+			// 
+			this.PizzaAtmero.Text = "Pizza átmérő";
+			// 
+			// PizzaFeltet
+			// 
+			this.PizzaFeltet.Text = "Pizza feltét";
+			// 
+			// CimVarosNev
+			// 
+			this.CimVarosNev.Text = "Város";
+			// 
+			// VarosIrSzam
+			// 
+			this.VarosIrSzam.Text = "Irányítószám";
+			// 
+			// CimUtcaNev
+			// 
+			this.CimUtcaNev.Text = "Utca";
+			// 
+			// CimHazSzam
+			// 
+			this.CimHazSzam.Text = "Házszám";
+			// 
 			// btnDataDisplayerClose
 			// 
-			this.btnDataDisplayerClose.Location = new System.Drawing.Point(12, 370);
+			this.btnDataDisplayerClose.Location = new System.Drawing.Point(480, 370);
 			this.btnDataDisplayerClose.Name = "btnDataDisplayerClose";
 			this.btnDataDisplayerClose.Size = new System.Drawing.Size(75, 23);
 			this.btnDataDisplayerClose.TabIndex = 1;
@@ -82,11 +107,11 @@
 
 		private System.Windows.Forms.ListView lstvwRendelesek;
 		private System.Windows.Forms.Button btnDataDisplayerClose;
-		private System.Windows.Forms.ColumnHeader columnHeader1;
-		private System.Windows.Forms.ColumnHeader columnHeader2;
-		private System.Windows.Forms.ColumnHeader columnHeader3;
-		private System.Windows.Forms.ColumnHeader columnHeader4;
-		private System.Windows.Forms.ColumnHeader columnHeader5;
-		private System.Windows.Forms.ColumnHeader columnHeader6;
+		private System.Windows.Forms.ColumnHeader PizzaAtmero;
+		private System.Windows.Forms.ColumnHeader PizzaFeltet;
+		private System.Windows.Forms.ColumnHeader CimVarosNev;
+		private System.Windows.Forms.ColumnHeader VarosIrSzam;
+		private System.Windows.Forms.ColumnHeader CimUtcaNev;
+		private System.Windows.Forms.ColumnHeader CimHazSzam;
 	}
 }

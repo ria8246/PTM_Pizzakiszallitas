@@ -14,7 +14,7 @@ namespace PTM_Pizzakiszallitas
 	{
 		private void RendelesHozzaadasa (Rendeles rendeles)
 		{
-			
+		
 
 			return;
 		}

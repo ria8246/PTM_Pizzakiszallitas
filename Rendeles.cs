@@ -29,6 +29,18 @@ namespace PTM_Pizzakiszallitas
 	} else {
 		return false;
 	}
-}
+	}
+	// Szükséges implementálni.
+	static public bool operator > (Rendeles egyik, Rendeles masik)
+	{
+		if (/* egyik.Cim > masik.Cim */ true)
+		{ /* Cannot access Rendeles.Cim */
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
 }

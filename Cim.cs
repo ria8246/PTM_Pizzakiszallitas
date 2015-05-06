@@ -30,32 +30,69 @@ namespace PTM_Pizzakiszallitas
         }
 
 		//Cim osztályba
-static public bool operator < (Cim egyik, Cim masik ) {
-	/*
-	if ( varosNev < masik.varosNev ) {
-		return this;
-	} else if ( varosNev == varosNev ) {
+		static public bool operator < (Cim egyik, Cim masik ) {
+			if ( egyik.varosNev.CompareTo (masik.varosNev) <  0) {
+				return true;
+			} else if ( egyik.varosNev == masik.varosNev ) {
 		
-		if ( utcaNev < masik.utcaNev ) {
-			return this;
-		} else if ( utcaNev == masik.utcaNev ) {
+				if ( egyik.utcaNev.CompareTo (masik.utcaNev) < 0 ) {
+					return true;
+				} else if ( egyik.utcaNev == masik.utcaNev ) {
 			
-			if ( hazSzam < masik.hazSzam ) {
-				return this;
+					if ( egyik.hazSzam < masik.hazSzam ) {
+						return true;
+					} else {
+						return false;
+					}
+			
+				} else {
+					return false;
+				}
+		
 			} else {
-				return masik;
+				return false;
 			}
 			
-		} else {
-			return masik;
 		}
-		
-	} else {
-		return masik;
-	}*/
-	// Cannot access fields of Cim
-	return true;
-}
-	
+
+		// Szükséges implementálni.
+		static public bool operator > (Cim egyik, Cim masik)
+		{
+			if (egyik.varosNev.CompareTo (masik.varosNev) > 0)
+			{
+				return true;
+			}
+			else if (egyik.varosNev == masik.varosNev)
+			{
+
+				if (egyik.utcaNev.CompareTo (masik.utcaNev) > 0)
+				{
+					return true;
+				}
+				else if (egyik.utcaNev == masik.utcaNev)
+				{
+
+					if (egyik.hazSzam > masik.hazSzam)
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+
+				}
+				else
+				{
+					return false;
+				}
+
+			}
+			else
+			{
+				return false;
+			}
+
+		}
     }
 }

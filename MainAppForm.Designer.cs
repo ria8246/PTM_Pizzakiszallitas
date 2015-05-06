@@ -59,6 +59,7 @@
 			this.btnMainFormClose.TabIndex = 2;
 			this.btnMainFormClose.Text = "Bezárás";
 			this.btnMainFormClose.UseVisualStyleBackColor = true;
+			this.btnMainFormClose.Click += new System.EventHandler(this.btnMainFormClose_Click);
 			// 
 			// PizzakiszallitasMainForm
 			// 

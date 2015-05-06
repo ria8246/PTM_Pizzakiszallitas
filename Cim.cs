@@ -28,5 +28,34 @@ namespace PTM_Pizzakiszallitas
             hazSzam = 0;
         
         }
+
+		//Cim osztályba
+static public bool operator < (Cim egyik, Cim masik ) {
+	/*
+	if ( varosNev < masik.varosNev ) {
+		return this;
+	} else if ( varosNev == varosNev ) {
+		
+		if ( utcaNev < masik.utcaNev ) {
+			return this;
+		} else if ( utcaNev == masik.utcaNev ) {
+			
+			if ( hazSzam < masik.hazSzam ) {
+				return this;
+			} else {
+				return masik;
+			}
+			
+		} else {
+			return masik;
+		}
+		
+	} else {
+		return masik;
+	}*/
+	// Cannot access fields of Cim
+	return true;
+}
+	
     }
 }

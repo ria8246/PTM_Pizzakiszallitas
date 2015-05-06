@@ -25,5 +25,12 @@ namespace PTM_Pizzakiszallitas.Serialization
 
 			return;
 		}
+
+		public List<Serialization.Rendeles>.Enumerator GetEnumerator ()
+		{
+			List<Serialization.Rendeles>.Enumerator ListEnumerator = rendelesek.GetEnumerator ();
+
+			return ListEnumerator;
+		}
 	}
 }

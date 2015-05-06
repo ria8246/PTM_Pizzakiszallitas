@@ -16,14 +16,62 @@ namespace PTM_Pizzakiszallitas
 		// Private methods
 		private void Initialise ()
 		{
-			// TODO Rendeléseket XML-ből beolvasni...
 			iroda = new Iroda ();
-			rendelesek = new Rendelesek ();
+			rendelesek = TransformRendelesDataFromSerializedToNonSerialized ("test.xml");
 			futarok = new Futarok ();
 			varos = new Varos ();
 
 			return;
 		}
+
+		#region Convering Orders from serialized form to non-serialized form
+		
+		private Rendelesek TransformRendelesDataFromSerializedToNonSerialized (string FileName)
+		{
+			Rendelesek rendelesek = new Rendelesek ();
+			Serialization.Rendelesek serializedRendelesek = ReadInputFromFile (FileName);
+			TransformOrders (serializedRendelesek, rendelesek);
+
+			return rendelesek;
+		}
+
+		private Serialization.Rendelesek ReadInputFromFile (string FileName)
+		{
+			Serialization.DataSerializer dataSerializer = new Serialization.DataSerializer ();
+			Serialization.Rendelesek ReadSerializedInputData = dataSerializer.ReadXMLDocument (FileName);
+
+			return ReadSerializedInputData;
+		}
+
+		private void TransformOrders (Serialization.Rendelesek TransformFrom, Rendelesek TransformTo)
+		{
+			List<Serialization.Rendeles>.Enumerator SerRenListEnumerator = TransformFrom.GetEnumerator ();
+
+			while (SerRenListEnumerator.MoveNext ())
+			{
+				Serialization.Rendeles SerRendeles = SerRenListEnumerator.Current;
+				Rendeles NotSerRendeles = TransformOrder (SerRendeles);
+				rendelesek.RendelestHozzaad (NotSerRendeles);
+			}
+
+			return;
+		}
+
+		private Rendeles TransformOrder (Serialization.Rendeles TransformFrom)
+		{
+			string PizzaFeltet = TransformFrom.pizza.Feltet;
+			int PizzaAtmero = TransformFrom.pizza.Atmero;
+			string VarosNev = TransformFrom.cim.VarosNev;
+			int IranyitoSzam = TransformFrom.cim.IrSzam;
+			string UtcaNev = TransformFrom.cim.UtcaNev;
+			int HazSzam = TransformFrom.cim.HazSzam;
+
+			Rendeles TransformTo = new Rendeles ();
+			// Rendelés konstruktornak adattagok?
+
+			return TransformTo;
+		}
+		#endregion
 		
 		// Public methods
 		public PizzaSzallito ()
@@ -33,17 +81,6 @@ namespace PTM_Pizzakiszallitas
 
 		public void MainLoop ()
 		{
-			Futar KovetkezoSzabadFutar = null;
-			// Utvonalterv KiszallitasiUtvonal = null;
-
-			// KovetkezoSzabadFutar = futarok.KovetkezoFutar (); // Not implemented!
-			// KiszallitasiUtvonal = iroda.UtvonalTervezes (rendelesek);
-			if (KovetkezoSzabadFutar != null)
-			{
-				// iroda.UtvonaltervAtadasa (KiszallitasiUtvonal, KovetkezoSzabadFutar); // Not implemented!!!
-				// iroda.FutartIndit (KovetkezoSzabadFutar); // Planned.
-			}
-
 			// TODO: Loop and Timer...
 
 			return;

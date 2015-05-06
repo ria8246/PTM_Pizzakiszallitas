@@ -8,5 +8,40 @@ namespace PTM_Pizzakiszallitas
 {
     class Iroda
     {
+
+		public Iroda ()
+		{
+
+		}
+
+		//A tárolt cimeket sorbarendezi, majd végig megy rajta egy ciklussal és
+		//átpakolja az Utvonaltervbe, a már rendezett sorrendben
+		public Utvonalterv UtvonalTervezes (Rendelesek rendelesek, int randomSzam)
+		{
+			Utvonalterv utvonalterv = new Utvonalterv ();
+			List<Rendeles> rendezendoRendelesek = new List<Rendeles> ();
+
+			for (int i = 0; i < randomSzam; i++)
+			{
+				rendezendoRendelesek.Add (rendelesek.RendelestKivesz ());
+			}
+
+			rendezendoRendelesek.Sort ();
+
+			foreach (Rendeles item in rendezendoRendelesek)
+			{
+				utvonalterv.RendelesHozzaadas (item);
+			}
+
+			return utvonalterv;
+
+		}
+
+		//Meghivja a futar Kiszalitas metodusat, majd visszadja a visszatérési értéket
+		public Futar.FutarAllapot FutartIndit (Futar futar)
+		{
+			return futar.Kiszallitas ();
+		}
+
     }
 }

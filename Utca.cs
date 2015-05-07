@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Utca
+    public class Utca
     {
         private string utcaNev;
         private List<Cim> cimek;

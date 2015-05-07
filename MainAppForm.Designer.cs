@@ -31,6 +31,7 @@
 			this.tbPizzaKiszallitasOutput = new System.Windows.Forms.TextBox();
 			this.lblPizzaKiszallitasOutput = new System.Windows.Forms.Label();
 			this.btnMainFormClose = new System.Windows.Forms.Button();
+			this.btnShowData = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// tbPizzaKiszallitasOutput
@@ -47,9 +48,9 @@
 			this.lblPizzaKiszallitasOutput.AutoSize = true;
 			this.lblPizzaKiszallitasOutput.Location = new System.Drawing.Point(12, 231);
 			this.lblPizzaKiszallitasOutput.Name = "lblPizzaKiszallitasOutput";
-			this.lblPizzaKiszallitasOutput.Size = new System.Drawing.Size(129, 13);
+			this.lblPizzaKiszallitasOutput.Size = new System.Drawing.Size(128, 13);
 			this.lblPizzaKiszallitasOutput.TabIndex = 1;
-			this.lblPizzaKiszallitasOutput.Text = "PizzakiSzállítás kimenete:";
+			this.lblPizzaKiszallitasOutput.Text = "PizzaKiszállítás kimenete:";
 			// 
 			// btnMainFormClose
 			// 
@@ -61,11 +62,22 @@
 			this.btnMainFormClose.UseVisualStyleBackColor = true;
 			this.btnMainFormClose.Click += new System.EventHandler(this.btnMainFormClose_Click);
 			// 
+			// btnShowData
+			// 
+			this.btnShowData.Location = new System.Drawing.Point(310, 360);
+			this.btnShowData.Name = "btnShowData";
+			this.btnShowData.Size = new System.Drawing.Size(111, 23);
+			this.btnShowData.TabIndex = 3;
+			this.btnShowData.Text = "Beolvasott adatok";
+			this.btnShowData.UseVisualStyleBackColor = true;
+			this.btnShowData.Click += new System.EventHandler(this.btnShowData_Click);
+			// 
 			// PizzakiszallitasMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(637, 409);
+			this.Controls.Add(this.btnShowData);
 			this.Controls.Add(this.btnMainFormClose);
 			this.Controls.Add(this.lblPizzaKiszallitasOutput);
 			this.Controls.Add(this.tbPizzaKiszallitasOutput);
@@ -81,6 +93,7 @@
 		private System.Windows.Forms.TextBox tbPizzaKiszallitasOutput;
 		private System.Windows.Forms.Label lblPizzaKiszallitasOutput;
 		private System.Windows.Forms.Button btnMainFormClose;
+		private System.Windows.Forms.Button btnShowData;
 	}
 }
 

@@ -51,38 +51,44 @@
 			this.lstvwRendelesek.GridLines = true;
 			this.lstvwRendelesek.Location = new System.Drawing.Point(12, 12);
 			this.lstvwRendelesek.Name = "lstvwRendelesek";
-			this.lstvwRendelesek.Size = new System.Drawing.Size(543, 337);
+			this.lstvwRendelesek.Size = new System.Drawing.Size(721, 337);
 			this.lstvwRendelesek.TabIndex = 0;
 			this.lstvwRendelesek.UseCompatibleStateImageBehavior = false;
-			this.lstvwRendelesek.View = System.Windows.Forms.View.List;
+			this.lstvwRendelesek.View = System.Windows.Forms.View.Details;
 			// 
 			// PizzaAtmero
 			// 
 			this.PizzaAtmero.Text = "Pizza átmérő";
+			this.PizzaAtmero.Width = 84;
 			// 
 			// PizzaFeltet
 			// 
 			this.PizzaFeltet.Text = "Pizza feltét";
+			this.PizzaFeltet.Width = 83;
 			// 
 			// CimVarosNev
 			// 
 			this.CimVarosNev.Text = "Város";
+			this.CimVarosNev.Width = 79;
 			// 
 			// VarosIrSzam
 			// 
 			this.VarosIrSzam.Text = "Irányítószám";
+			this.VarosIrSzam.Width = 91;
 			// 
 			// CimUtcaNev
 			// 
 			this.CimUtcaNev.Text = "Utca";
+			this.CimUtcaNev.Width = 203;
 			// 
 			// CimHazSzam
 			// 
 			this.CimHazSzam.Text = "Házszám";
+			this.CimHazSzam.Width = 176;
 			// 
 			// btnDataDisplayerClose
 			// 
-			this.btnDataDisplayerClose.Location = new System.Drawing.Point(480, 370);
+			this.btnDataDisplayerClose.Location = new System.Drawing.Point(658, 370);
 			this.btnDataDisplayerClose.Name = "btnDataDisplayerClose";
 			this.btnDataDisplayerClose.Size = new System.Drawing.Size(75, 23);
 			this.btnDataDisplayerClose.TabIndex = 1;
@@ -94,7 +100,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(584, 405);
+			this.ClientSize = new System.Drawing.Size(745, 405);
 			this.Controls.Add(this.btnDataDisplayerClose);
 			this.Controls.Add(this.lstvwRendelesek);
 			this.Name = "DataDisplayer";

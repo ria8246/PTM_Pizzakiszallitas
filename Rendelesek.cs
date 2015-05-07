@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Rendelesek
+   public class Rendelesek
     {
         private Stack<Rendeles> rendelesek;
 
@@ -23,5 +23,13 @@ namespace PTM_Pizzakiszallitas
         public Rendeles RendelestKivesz() {
             return rendelesek.Pop();        
         }
+
+		// KRiSTóF által:
+		public int RendelesekSzama ()
+		{
+			int dbSzam = rendelesek.Count;
+
+			return dbSzam;
+		}
     }
 }

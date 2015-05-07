@@ -12,9 +12,24 @@ namespace PTM_Pizzakiszallitas
 {
 	public partial class DataDisplayer : Form
 	{
-		private void RendelesHozzaadasa (Rendeles rendeles)
+		public void RendelesHozzaadasa (Rendeles rendeles)
 		{
-		
+			string PizzaFeltet = rendeles.RendeltPizza ().getFeltet ();
+			int PizzaAtmero = rendeles.RendeltPizza ().getAtmero ();
+			string VarosNev = rendeles.RendelesiCim ().getVarosNev ();
+			int IranyitoSzam = rendeles.RendelesiCim ().getIranyitoSzam ();
+			string UtcaNev = rendeles.RendelesiCim ().getUtcaNev ();
+			int HazSzam = rendeles.RendelesiCim ().getHazSzam ();
+
+			ListViewItem item = new ListViewItem (PizzaAtmero.ToString ());
+			item.SubItems.Add (PizzaFeltet);
+			item.SubItems.Add (VarosNev);
+			item.SubItems.Add (IranyitoSzam.ToString ());
+			item.SubItems.Add (UtcaNev);
+			item.SubItems.Add (HazSzam.ToString ());
+
+			lstvwRendelesek.Items.Add (item);
+			lstvwRendelesek.Refresh ();
 
 			return;
 		}
@@ -30,12 +45,5 @@ namespace PTM_Pizzakiszallitas
 
 			return;
 		}
-		
-		/*
-		public void RendelesekHozzaadasa (Rendelesek rendelesek)
-		{
-			return;
-		}
-		*/
 	}
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Rendeles : Tuple<Cim, Pizza> // 1 cim - 1 pizza
+   public class Rendeles : Tuple<Cim, Pizza> // 1 cim - 1 pizza
     {
         
         //public Tuple<Cim, Pizza> rendeles;   
@@ -19,8 +19,6 @@ namespace PTM_Pizzakiszallitas
      public Rendeles() : base(new Cim(), new Pizza())
     {
     }
-
-
 
 	//Rendeles osztályba
 	static public bool operator < (Rendeles egyik, Rendeles masik ) {
@@ -42,5 +40,23 @@ namespace PTM_Pizzakiszallitas
 			return false;
 		}
 	}
+	// KRiSTóF által
+	 public Rendeles (Cim cim, Pizza pizza) : base (cim, pizza)
+	 {
+	 }
+
+	 public Pizza RendeltPizza ()
+	 {
+		 Pizza rendeltPizza = base.Item2;
+
+		 return rendeltPizza;
+	 }
+
+	 public Cim RendelesiCim ()
+	 {
+		 Cim rendelesiCim = base.Item1;
+
+		 return rendelesiCim;
+	 }
 }
 }

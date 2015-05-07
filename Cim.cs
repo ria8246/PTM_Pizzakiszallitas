@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Cim
+   public class Cim
     {
         private int iranyitoSzam; 
         private string varosNev;
@@ -93,6 +93,27 @@ namespace PTM_Pizzakiszallitas
 				return false;
 			}
 
+		}
+
+		// KRiSTóF által:
+		public int getIranyitoSzam ()
+		{
+			return iranyitoSzam;
+		}
+
+		public string getVarosNev ()
+		{
+			return varosNev;
+		}
+
+		public string getUtcaNev ()
+		{
+			return utcaNev;
+		}
+
+		public int getHazSzam ()
+		{
+			return hazSzam;
 		}
     }
 }

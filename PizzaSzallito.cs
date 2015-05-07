@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace PTM_Pizzakiszallitas
 {
-	class PizzaSzallito
+	public class PizzaSzallito
 	{
 		// Private member declarations
 		Iroda iroda = null;
@@ -17,7 +18,7 @@ namespace PTM_Pizzakiszallitas
 		private void Initialise ()
 		{
 			iroda = new Iroda ();
-			rendelesek = TransformRendelesDataFromSerializedToNonSerialized ("test.xml");
+			rendelesek = TransformRendelesDataFromSerializedToNonSerialized ("input.xml");
 			futarok = new Futarok ();
 			varos = new Varos ();
 
@@ -25,7 +26,6 @@ namespace PTM_Pizzakiszallitas
 		}
 
 		#region Convering Orders from serialized form to non-serialized form
-		
 		private Rendelesek TransformRendelesDataFromSerializedToNonSerialized (string FileName)
 		{
 			Rendelesek rendelesek = new Rendelesek ();
@@ -51,7 +51,7 @@ namespace PTM_Pizzakiszallitas
 			{
 				Serialization.Rendeles SerRendeles = SerRenListEnumerator.Current;
 				Rendeles NotSerRendeles = TransformOrder (SerRendeles);
-				rendelesek.RendelestHozzaad (NotSerRendeles);
+				TransformTo.RendelestHozzaad (NotSerRendeles);
 			}
 
 			return;
@@ -66,22 +66,29 @@ namespace PTM_Pizzakiszallitas
 			string UtcaNev = TransformFrom.cim.UtcaNev;
 			int HazSzam = TransformFrom.cim.HazSzam;
 
-			Rendeles TransformTo = new Rendeles ();
-			// Rendelés konstruktornak adattagok?
+			Pizza rendeltPizza = new Pizza (PizzaFeltet, PizzaAtmero);
+			Cim rendelesiCim = new Cim (IranyitoSzam, VarosNev, UtcaNev, HazSzam);
+			Rendeles TransformTo = new Rendeles (rendelesiCim, rendeltPizza);
 
 			return TransformTo;
 		}
 		#endregion
-		
+
 		// Public methods
 		public PizzaSzallito ()
 		{
 			Initialise ();
 		}
 
-		public void MainLoop ()
+		public Rendelesek GetRendelesek ()
 		{
-			// TODO: Loop and Timer...
+			return rendelesek;
+		}
+
+		public void Main ()
+		{
+			
+
 
 			return;
 		}

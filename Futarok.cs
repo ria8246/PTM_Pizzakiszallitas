@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Futarok
+    public class Futarok
     {
         private List<Futar> futarok;
 
@@ -25,7 +25,13 @@ namespace PTM_Pizzakiszallitas
             return futarok.ElementAt(index);
         }
 
-        
+		// KRiStóF által:
+        public int FutarokSzama ()
+		{
+			int dbSzam = futarok.Count;
+
+			return dbSzam;
+		}
 
         
 

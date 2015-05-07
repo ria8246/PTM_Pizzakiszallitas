@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Utvonalterv
+   public class Utvonalterv
     {
         private List<Rendeles> kiszallitando;
 

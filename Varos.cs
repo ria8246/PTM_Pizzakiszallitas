@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Varos
+    public class Varos
     {
         private string varosNev;
         private int iranyitoSzam;

@@ -15,7 +15,15 @@ namespace PTM_Pizzakiszallitas
 		{
 			Application.EnableVisualStyles ();
 			Application.SetCompatibleTextRenderingDefault (false);
+
+			Serialization.DataSerializer ds_write = new Serialization.DataSerializer ();
+			ds_write.CreateXMLDocument ("input.xml");
+
+			Application.EnableVisualStyles ();
+			Application.SetCompatibleTextRenderingDefault (false);
 			Application.Run (new PizzakiszallitasMainForm ());
+
+			return;
 		}
 	}
 }

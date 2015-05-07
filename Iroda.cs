@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Iroda
+    public class Iroda
     {
 
 		public Iroda ()
@@ -38,7 +38,7 @@ namespace PTM_Pizzakiszallitas
 		}
 
 		//Meghivja a futar Kiszalitas metodusat, majd visszadja a visszatérési értéket
-		public Futar.FutarAllapot FutartIndit (Futar futar)
+		public FutarAllapot FutartIndit (Futar futar)
 		{
 			return futar.Kiszallitas ();
 		}

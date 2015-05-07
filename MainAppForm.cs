@@ -11,9 +11,43 @@ namespace PTM_Pizzakiszallitas
 {
 	public partial class PizzakiszallitasMainForm : Form
 	{
+		private DataDisplayer dataDisplayer = null;
+		private PizzaSzallito MainPizzaSzallito = null;
+
 		public PizzakiszallitasMainForm ()
 		{
 			InitializeComponent ();
+			InitialisePizzaSzallito ();
+			InitialiseGUI (MainPizzaSzallito.GetRendelesek ());
+		}
+
+		private void InitialisePizzaSzallito ()
+		{
+			MainPizzaSzallito = new PizzaSzallito ();
+
+			return;
+		}
+
+		private void InitialiseGUI (Rendelesek rendelesek)
+		{
+			int RendelesekSzama = rendelesek.RendelesekSzama ();
+			Rendeles adottRendeles = null;
+			Rendelesek visszatoltendoek = new Rendelesek ();
+			dataDisplayer = new DataDisplayer ();
+
+			for (int i = 0; i < RendelesekSzama; i++)
+			{
+				adottRendeles = rendelesek.RendelestKivesz ();
+				dataDisplayer.RendelesHozzaadasa (adottRendeles);
+				visszatoltendoek.RendelestHozzaad (adottRendeles);
+			}
+			for (int c = 0; c < RendelesekSzama; c++)
+			{
+				adottRendeles = visszatoltendoek.RendelestKivesz ();
+				rendelesek.RendelestHozzaad (adottRendeles);
+			}
+
+			return;
 		}
 
 		public void ClearOutput ()
@@ -36,6 +70,13 @@ namespace PTM_Pizzakiszallitas
 		private void btnMainFormClose_Click (object sender, EventArgs e)
 		{
 			this.Close ();
+
+			return;
+		}
+
+		private void btnShowData_Click (object sender, EventArgs e)
+		{
+			dataDisplayer.Show ();
 
 			return;
 		}

@@ -5,17 +5,18 @@ using System.Text;
 
 namespace PTM_Pizzakiszallitas
 {
-    class Futar
+	public enum FutarAllapot
+	{
+		pizzat_szallit,
+		varakozik,
+		visszafele_megy
+	};
+
+    public class Futar
     {
 
         private Utvonalterv szallitasiSorrend;
         
-        public enum FutarAllapot
-        {
-            pizzat_szallit,
-            varakozik,
-            visszafele_megy
-        };
 
          private FutarAllapot aktualisAllapot;
 
@@ -47,6 +48,13 @@ namespace PTM_Pizzakiszallitas
             return aktualisAllapot;
         }
 
-        
+        // KRiSTóF által
+		public FutarAllapot RendelestFelveszUtvonaltervbe (Rendeles ujRendeles)
+		{
+			aktualisAllapot = FutarAllapot.varakozik;
+			szallitasiSorrend.RendelesHozzaadas (ujRendeles);
+
+			return aktualisAllapot;
+		}
     }
 }

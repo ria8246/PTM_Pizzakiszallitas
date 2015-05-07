@@ -32,6 +32,7 @@
 			this.lblPizzaKiszallitasOutput = new System.Windows.Forms.Label();
 			this.btnMainFormClose = new System.Windows.Forms.Button();
 			this.btnShowData = new System.Windows.Forms.Button();
+			this.btnStartSimulation = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// tbPizzaKiszallitasOutput
@@ -40,7 +41,7 @@
 			this.tbPizzaKiszallitasOutput.Multiline = true;
 			this.tbPizzaKiszallitasOutput.Name = "tbPizzaKiszallitasOutput";
 			this.tbPizzaKiszallitasOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.tbPizzaKiszallitasOutput.Size = new System.Drawing.Size(613, 86);
+			this.tbPizzaKiszallitasOutput.Size = new System.Drawing.Size(613, 213);
 			this.tbPizzaKiszallitasOutput.TabIndex = 0;
 			// 
 			// lblPizzaKiszallitasOutput
@@ -54,7 +55,7 @@
 			// 
 			// btnMainFormClose
 			// 
-			this.btnMainFormClose.Location = new System.Drawing.Point(550, 360);
+			this.btnMainFormClose.Location = new System.Drawing.Point(550, 481);
 			this.btnMainFormClose.Name = "btnMainFormClose";
 			this.btnMainFormClose.Size = new System.Drawing.Size(75, 23);
 			this.btnMainFormClose.TabIndex = 2;
@@ -64,7 +65,7 @@
 			// 
 			// btnShowData
 			// 
-			this.btnShowData.Location = new System.Drawing.Point(310, 360);
+			this.btnShowData.Location = new System.Drawing.Point(247, 481);
 			this.btnShowData.Name = "btnShowData";
 			this.btnShowData.Size = new System.Drawing.Size(111, 23);
 			this.btnShowData.TabIndex = 3;
@@ -72,11 +73,22 @@
 			this.btnShowData.UseVisualStyleBackColor = true;
 			this.btnShowData.Click += new System.EventHandler(this.btnShowData_Click);
 			// 
+			// btnStartSimulation
+			// 
+			this.btnStartSimulation.Location = new System.Drawing.Point(12, 481);
+			this.btnStartSimulation.Name = "btnStartSimulation";
+			this.btnStartSimulation.Size = new System.Drawing.Size(125, 23);
+			this.btnStartSimulation.TabIndex = 4;
+			this.btnStartSimulation.Text = "Szimuláció indítása";
+			this.btnStartSimulation.UseVisualStyleBackColor = true;
+			this.btnStartSimulation.Click += new System.EventHandler(this.btnStartSimulation_Click);
+			// 
 			// PizzakiszallitasMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(637, 409);
+			this.ClientSize = new System.Drawing.Size(637, 516);
+			this.Controls.Add(this.btnStartSimulation);
 			this.Controls.Add(this.btnShowData);
 			this.Controls.Add(this.btnMainFormClose);
 			this.Controls.Add(this.lblPizzaKiszallitasOutput);
@@ -94,6 +106,7 @@
 		private System.Windows.Forms.Label lblPizzaKiszallitasOutput;
 		private System.Windows.Forms.Button btnMainFormClose;
 		private System.Windows.Forms.Button btnShowData;
+		private System.Windows.Forms.Button btnStartSimulation;
 	}
 }
 

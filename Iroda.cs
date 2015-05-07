@@ -16,17 +16,18 @@ namespace PTM_Pizzakiszallitas
 
 		//A tárolt cimeket sorbarendezi, majd végig megy rajta egy ciklussal és
 		//átpakolja az Utvonaltervbe, a már rendezett sorrendben
-		public Utvonalterv UtvonalTervezes (Rendelesek rendelesek, int randomSzam)
+		public Utvonalterv UtvonalTervezes (Rendelesek rendelesek, int feldolgozandoRendelesekSzama)
 		{
 			Utvonalterv utvonalterv = new Utvonalterv ();
 			List<Rendeles> rendezendoRendelesek = new List<Rendeles> ();
 
-			for (int i = 0; i < randomSzam; i++)
+			for (int i = 0; i < feldolgozandoRendelesekSzama; i++)
 			{
 				rendezendoRendelesek.Add (rendelesek.RendelestKivesz ());
+				// Does not handle empty stack!
 			}
 
-			rendezendoRendelesek.Sort ();
+			// rendezendoRendelesek.Sort (); // Throws exception!
 
 			foreach (Rendeles item in rendezendoRendelesek)
 			{

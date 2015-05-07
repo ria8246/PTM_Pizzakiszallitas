@@ -115,5 +115,12 @@ namespace PTM_Pizzakiszallitas
 		{
 			return hazSzam;
 		}
+
+		public override string ToString ()
+		{
+			string result = iranyitoSzam.ToString () + ", " + varosNev + ", " + utcaNev + ", " + hazSzam.ToString ();
+
+			return result;
+		}
     }
 }

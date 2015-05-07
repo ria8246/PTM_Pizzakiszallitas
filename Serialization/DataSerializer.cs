@@ -17,6 +17,7 @@ namespace PTM_Pizzakiszallitas.Serialization
 			Serialization.Rendeles tesztRendeles3 = new Serialization.Rendeles (new Serialization.Pizza (12, "gombás"), new Serialization.Cim ("Veszprém", 8200, "Lovassy", 20));
 			Serialization.Rendeles tesztRendeles4 = new Serialization.Rendeles (new Serialization.Pizza (28, "sonkás"), new Serialization.Cim ("Veszprém", 8200, "Bajcsy-Zsilinszky", 25));
 			Serialization.Rendeles tesztRendeles5 = new Serialization.Rendeles (new Serialization.Pizza (23, "ananászos"), new Serialization.Cim ("Veszprém", 8200, "Malomkő", 14));
+			Serialization.Rendeles tesztRendeles6 = new Serialization.Rendeles (new Serialization.Pizza (15, "szalámis"), new Serialization.Cim ("Veszprém", 8200, "Kossuth", 7));
 			#endregion
 
 			#region Rendeléshez hozzáadás
@@ -26,6 +27,7 @@ namespace PTM_Pizzakiszallitas.Serialization
 			rendelesek.AddRendeles (tesztRendeles3);
 			rendelesek.AddRendeles (tesztRendeles4);
 			rendelesek.AddRendeles (tesztRendeles5);
+			rendelesek.AddRendeles (tesztRendeles6);
 			#endregion
 
 			return rendelesek;

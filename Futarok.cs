@@ -25,7 +25,7 @@ namespace PTM_Pizzakiszallitas
             return futarok.ElementAt(index);
         }
 
-		// KRiStóF által:
+		// KRiSTóF által:
         public int FutarokSzama ()
 		{
 			int dbSzam = futarok.Count;
@@ -33,7 +33,22 @@ namespace PTM_Pizzakiszallitas
 			return dbSzam;
 		}
 
-        
+		public Futar KovetkezoFutar ()
+		{
+			Futar szabadFutar = null;
+			List<Futar>.Enumerator listIterator = futarok.GetEnumerator ();
+
+			while (listIterator.MoveNext ())
+			{
+				if (listIterator.Current.getFutarAllapot () == FutarAllapot.varakozik)
+				{
+					szabadFutar = listIterator.Current;
+					return szabadFutar;
+				}
+			}
+
+			return szabadFutar;
+		}
 
     }
 }

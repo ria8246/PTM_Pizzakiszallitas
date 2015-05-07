@@ -19,6 +19,7 @@ namespace PTM_Pizzakiszallitas
 			InitializeComponent ();
 			InitialisePizzaSzallito ();
 			InitialiseGUI (MainPizzaSzallito.GetRendelesek ());
+			AppendLineToOutput ("XML adatok beolvasva.");
 		}
 
 		private void InitialisePizzaSzallito ()
@@ -77,6 +78,13 @@ namespace PTM_Pizzakiszallitas
 		private void btnShowData_Click (object sender, EventArgs e)
 		{
 			dataDisplayer.Show ();
+
+			return;
+		}
+
+		private void btnStartSimulation_Click (object sender, EventArgs e)
+		{
+			MainPizzaSzallito.Main (this);
 
 			return;
 		}

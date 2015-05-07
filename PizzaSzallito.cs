@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace PTM_Pizzakiszallitas
 {
 	public class PizzaSzallito
@@ -85,10 +86,36 @@ namespace PTM_Pizzakiszallitas
 			return rendelesek;
 		}
 
-		public void Main ()
+		public void Main (PizzakiszallitasMainForm form)
 		{
-			
+			Utvonalterv megtervezettUtvonal = null;
+			Futar szabadFutar = null;
+			Rendeles aktualisRendeles = null;
+			FutarAllapot aktualisFutarAllapot;
+			string message;
 
+			for (int i = 0; i < 2; i++)
+			{
+				megtervezettUtvonal = iroda.UtvonalTervezes (rendelesek, 2);
+				szabadFutar = futarok.KovetkezoFutar ();
+				if (szabadFutar != null)
+				{
+					aktualisFutarAllapot = szabadFutar.getFutarAllapot ();
+					message = "\t\t\t#" + szabadFutar.GetHashCode () + " futár állapota: " + aktualisFutarAllapot.ToString ();
+					form.AppendLineToOutput (message);
+					szabadFutar.UtvonaltervetFelvesz (megtervezettUtvonal);
+					aktualisFutarAllapot = iroda.FutartIndit (szabadFutar);
+					message = "#" + szabadFutar.GetHashCode () + " futár állapota: " + szabadFutar.getFutarAllapot ().ToString ();
+					form.AppendLineToOutput (message);
+					while ((aktualisRendeles = szabadFutar.getSzallitasiSorrend ().KovetkezoRendeles ()) != null)
+					{
+						message = "\t#" + szabadFutar.GetHashCode () + " futár tartózkodási helye: " + aktualisRendeles.RendelesiCim ().ToString ();
+						form.AppendLineToOutput (message);
+					}
+					message = "\t\t#" + szabadFutar.GetHashCode () + " futár állapota: " + szabadFutar.VisszafeleMegy ().ToString ();
+					form.AppendLineToOutput (message);
+				}
+			}
 
 			return;
 		}

@@ -41,7 +41,7 @@ namespace PTM_Pizzakiszallitas
 
 		private void btnDataDisplayerClose_Click (object sender, EventArgs e)
 		{
-			this.Close ();
+			this.Hide ();
 
 			return;
 		}

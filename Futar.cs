@@ -56,5 +56,12 @@ namespace PTM_Pizzakiszallitas
 
 			return aktualisAllapot;
 		}
+
+		public void UtvonaltervetFelvesz (Utvonalterv utvonalterv)
+		{
+			this.szallitasiSorrend = utvonalterv;
+
+			return;
+		}
     }
 }

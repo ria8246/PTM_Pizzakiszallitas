@@ -23,11 +23,16 @@ namespace PTM_Pizzakiszallitas
 
 			for (int i = 0; i < feldolgozandoRendelesekSzama; i++)
 			{
-				rendezendoRendelesek.Add (rendelesek.RendelestKivesz ());
-				// Does not handle empty stack!
+                Rendeles r = rendelesek.RendelestKivesz();
+                if (r != null)
+                {
+                    rendezendoRendelesek.Add( r );
+                }
+
 			}
 
-			// rendezendoRendelesek.Sort (); // Throws exception!
+            IComparer<Rendeles> comparer = new CimHasonlito();
+            rendezendoRendelesek.Sort(comparer); // Throws exception?
 
 			foreach (Rendeles item in rendezendoRendelesek)
 			{

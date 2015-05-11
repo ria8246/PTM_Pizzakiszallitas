@@ -21,9 +21,80 @@ namespace PTM_Pizzakiszallitas
 			iroda = new Iroda ();
 			rendelesek = TransformRendelesDataFromSerializedToNonSerialized ("input.xml");
 			futarok = new Futarok ();
-			varos = new Varos ();
+			varos = InitializeCity ();
 
 			return;
+		}
+
+		private Varos InitializeCity ()
+		{
+			const string VeszpremVarosNeve = "Veszprém";
+			const int VeszpremIranyitoszama = 8200;
+
+			Utca UjUtca = null;
+			Cim UjCim1 = null;
+			Cim UjCim2 = null;
+			Cim UjCim3 = null;
+			Cim UjCim4 = null;
+			varos = new Varos (VeszpremVarosNeve, VeszpremIranyitoszama);
+
+			#region Egyetem utca
+			string utca1 = "Egyetem";
+			UjUtca = new Utca (utca1);
+			UjCim1 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca1, 10);
+			UjCim2 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca1, 14);
+			UjCim3 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca1, 18);
+			UjCim4 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca1, 22);
+			UjUtca.CimHozzaadasa (UjCim1);
+			UjUtca.CimHozzaadasa (UjCim2);
+			UjUtca.CimHozzaadasa (UjCim3);
+			UjUtca.CimHozzaadasa (UjCim4);
+			varos.AddUtca (UjUtca);
+			#endregion
+
+			#region Jutasi utca
+			string utca2 = "Jutasi";
+			UjUtca = new Utca (utca2);
+			UjCim1 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca2, 3);
+			UjCim2 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca2, 7);
+			UjCim3 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca2, 11);
+			UjCim4 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca2, 15);
+			UjUtca.CimHozzaadasa (UjCim1);
+			UjUtca.CimHozzaadasa (UjCim2);
+			UjUtca.CimHozzaadasa (UjCim3);
+			UjUtca.CimHozzaadasa (UjCim4);
+			varos.AddUtca (UjUtca);
+			#endregion
+
+			#region Vár utca
+			string utca3 = "Vár";
+			UjUtca = new Utca (utca3);
+			UjCim1 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca3, 2);
+			UjCim2 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca3, 6);
+			UjCim3 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca3, 10);
+			UjCim4 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca3, 14);
+			UjUtca.CimHozzaadasa (UjCim1);
+			UjUtca.CimHozzaadasa (UjCim2);
+			UjUtca.CimHozzaadasa (UjCim3);
+			UjUtca.CimHozzaadasa (UjCim4);
+			varos.AddUtca (UjUtca);
+			#endregion
+
+			#region Szikra utca
+			string utca4 = "Szikra";
+			UjUtca = new Utca (utca4);
+			UjCim1 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca4, 1);
+			UjCim2 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca4, 5);
+			UjCim3 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca4, 9);
+			UjCim4 = new Cim (VeszpremIranyitoszama, VeszpremVarosNeve, utca4, 13);
+			UjUtca.CimHozzaadasa (UjCim1);
+			UjUtca.CimHozzaadasa (UjCim2);
+			UjUtca.CimHozzaadasa (UjCim3);
+			UjUtca.CimHozzaadasa (UjCim4);
+			varos.AddUtca (UjUtca);
+			#endregion
+
+			return varos;
 		}
 
 		#region Convering Orders from serialized form to non-serialized form
@@ -91,10 +162,12 @@ namespace PTM_Pizzakiszallitas
 			Utvonalterv megtervezettUtvonal = null;
 			Futar szabadFutar = null;
 			Rendeles aktualisRendeles = null;
-			FutarAllapot aktualisFutarAllapot;
-			string message;
+			FutarAllapot aktualisFutarAllapot = FutarAllapot.varakozik;
+			string message = "";
+			int rendelesekSzama = 0;
 
-			for (int i = 0; i < 2; i++)
+			rendelesekSzama = rendelesek.RendelesekSzama ();
+			for (int i = 0; i < rendelesekSzama; i++)
 			{
 				megtervezettUtvonal = iroda.UtvonalTervezes (rendelesek, 2);
 				szabadFutar = futarok.KovetkezoFutar ();
@@ -103,10 +176,14 @@ namespace PTM_Pizzakiszallitas
 					aktualisFutarAllapot = szabadFutar.getFutarAllapot ();
 					message = "\t\t\t#" + szabadFutar.GetHashCode () + " futár állapota: " + aktualisFutarAllapot.ToString ();
 					form.AppendLineToOutput (message);
+					System.Threading.Thread.Sleep (2 * 1000);
+
 					szabadFutar.UtvonaltervetFelvesz (megtervezettUtvonal);
 					aktualisFutarAllapot = iroda.FutartIndit (szabadFutar);
 					message = "#" + szabadFutar.GetHashCode () + " futár állapota: " + szabadFutar.getFutarAllapot ().ToString ();
 					form.AppendLineToOutput (message);
+					System.Threading.Thread.Sleep (2 * 1000);
+
 					while ((aktualisRendeles = szabadFutar.getSzallitasiSorrend ().KovetkezoRendeles ()) != null)
 					{
 						message = "\t#" + szabadFutar.GetHashCode () + " futár tartózkodási helye: " + aktualisRendeles.RendelesiCim ().ToString ();

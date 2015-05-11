@@ -17,5 +17,20 @@ namespace PTM_Pizzakiszallitas
             utcak.Add(ujUtca);
         }
 
+		// KRiSTóF által:
+		public int UtcakSzama ()
+		{
+			int dbSzam = utcak.Count;
+
+			return dbSzam;
+		}
+
+		public List<Utca>.Enumerator GetIterator ()
+		{
+			List<Utca>.Enumerator ListIterator = utcak.GetEnumerator ();
+
+			return ListIterator;
+		}
+
     }
 }

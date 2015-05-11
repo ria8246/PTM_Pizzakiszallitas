@@ -22,5 +22,34 @@ namespace PTM_Pizzakiszallitas
             this.iranyitoSzam = iranyitoSzam;
             this.utcak = utcak; //?
         }
-    }
+
+		// KRiSTóF által:
+		public Varos (string varosNev, int iranyitoSzam)
+		{
+			this.varosNev = varosNev;
+			this.iranyitoSzam = iranyitoSzam;
+			this.utcak = new Utcak ();
+		}
+
+		public void AddUtca (Utca UjUtca)
+		{
+			utcak.utcaHozzaadasa (UjUtca);
+
+			return;
+		}
+
+		public int VarosUtcainakSzama ()
+		{
+			int dbSzam = utcak.UtcakSzama ();
+
+			return dbSzam;
+		}
+
+		public List<Utca>.Enumerator VarosiUtcak ()
+		{
+			List<Utca>.Enumerator utcaIterator = utcak.GetIterator ();
+
+			return utcaIterator;
+		}
+	}
 }

@@ -25,5 +25,26 @@ namespace PTM_Pizzakiszallitas
         public void CimHozzaadasa(Cim ujCim) {
             cimek.Add(ujCim);
         }
+
+		// KRiSTóF által:
+		public Utca (string utcaNev)
+		{
+			this.utcaNev = utcaNev;
+			this.cimek = new List<Cim> ();
+		}
+
+		public int UtcaMeret ()
+		{
+			int meret = cimek.Count;
+
+			return meret;
+		}
+
+		public List<Cim>.Enumerator GetIterator ()
+		{
+			List<Cim>.Enumerator ListIterator = cimek.GetEnumerator ();
+
+			return ListIterator;
+		}
     }
 }

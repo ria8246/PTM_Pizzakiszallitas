@@ -20,16 +20,31 @@ namespace PTM_Pizzakiszallitas
             rendelesek.Push(ujRendeles);
         }
 
+	   /*
         public Rendeles RendelestKivesz() {
             return rendelesek.Pop();        
         }
-
+	   */
 		// KRiSTóF által:
 		public int RendelesekSzama ()
 		{
 			int dbSzam = rendelesek.Count;
 
 			return dbSzam;
+		}
+
+		public Rendeles RendelestKivesz ()
+		{
+			Rendeles rendeles = null;
+			int RendelesekSzamaAStackben = rendelesek.Count;
+
+			if (RendelesekSzamaAStackben == 0)
+			{
+				return rendeles;
+			}
+			rendeles = rendelesek.Pop ();
+
+			return rendeles;
 		}
     }
 }

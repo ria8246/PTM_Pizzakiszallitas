@@ -84,6 +84,7 @@ namespace PTM_Pizzakiszallitas
 
 		private void btnStartSimulation_Click (object sender, EventArgs e)
 		{
+			btnStartSimulation.Enabled = false;
 			MainPizzaSzallito.Main (this);
 
 			return;

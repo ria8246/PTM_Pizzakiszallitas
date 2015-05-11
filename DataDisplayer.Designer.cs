@@ -92,7 +92,7 @@
 			this.btnDataDisplayerClose.Name = "btnDataDisplayerClose";
 			this.btnDataDisplayerClose.Size = new System.Drawing.Size(75, 23);
 			this.btnDataDisplayerClose.TabIndex = 1;
-			this.btnDataDisplayerClose.Text = "Bezárás";
+			this.btnDataDisplayerClose.Text = "Elrejtés";
 			this.btnDataDisplayerClose.UseVisualStyleBackColor = true;
 			this.btnDataDisplayerClose.Click += new System.EventHandler(this.btnDataDisplayerClose_Click);
 			// 
@@ -103,6 +103,7 @@
 			this.ClientSize = new System.Drawing.Size(745, 405);
 			this.Controls.Add(this.btnDataDisplayerClose);
 			this.Controls.Add(this.lstvwRendelesek);
+			this.MaximizeBox = false;
 			this.Name = "DataDisplayer";
 			this.Text = "DataDisplayer";
 			this.ResumeLayout(false);

@@ -111,9 +111,11 @@ namespace PTM_Pizzakiszallitas
 					{
 						message = "\t#" + szabadFutar.GetHashCode () + " futár tartózkodási helye: " + aktualisRendeles.RendelesiCim ().ToString ();
 						form.AppendLineToOutput (message);
+						System.Threading.Thread.Sleep (2 * 1000);
 					}
 					message = "\t\t#" + szabadFutar.GetHashCode () + " futár állapota: " + szabadFutar.VisszafeleMegy ().ToString ();
 					form.AppendLineToOutput (message);
+					System.Threading.Thread.Sleep (2 * 1000);
 				}
 			}
 

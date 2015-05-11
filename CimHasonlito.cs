@@ -8,16 +8,6 @@ namespace PTM_Pizzakiszallitas
 {
     class CimHasonlito : IComparer<Rendeles>
     {
-        //public int Compare(Order x, Order y)
-        //{
-        //    int compareDate = x.Date.CompareTo(y.Date);
-        //    if (compareDate == 0)
-        //    {
-        //        return x.OrderID.CompareTo(y.OrderID);
-        //    }
-        //    return compareDate;
-        //}
-
         public int Compare(Rendeles x, Rendeles y)
         {
             int compareVaros = x.Item1.getVarosNev().CompareTo( y.Item1.getVarosNev() );

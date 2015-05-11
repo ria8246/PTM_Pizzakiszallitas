@@ -65,11 +65,11 @@
 			// 
 			// btnShowData
 			// 
-			this.btnShowData.Location = new System.Drawing.Point(247, 481);
+			this.btnShowData.Location = new System.Drawing.Point(220, 481);
 			this.btnShowData.Name = "btnShowData";
-			this.btnShowData.Size = new System.Drawing.Size(111, 23);
+			this.btnShowData.Size = new System.Drawing.Size(197, 23);
 			this.btnShowData.TabIndex = 3;
-			this.btnShowData.Text = "Beolvasott adatok";
+			this.btnShowData.Text = "Beolvasott adatok megjelenenítése";
 			this.btnShowData.UseVisualStyleBackColor = true;
 			this.btnShowData.Click += new System.EventHandler(this.btnShowData_Click);
 			// 
@@ -93,6 +93,7 @@
 			this.Controls.Add(this.btnMainFormClose);
 			this.Controls.Add(this.lblPizzaKiszallitasOutput);
 			this.Controls.Add(this.tbPizzaKiszallitasOutput);
+			this.MaximizeBox = false;
 			this.Name = "PizzakiszallitasMainForm";
 			this.Text = "Pizzakiszállítás";
 			this.ResumeLayout(false);

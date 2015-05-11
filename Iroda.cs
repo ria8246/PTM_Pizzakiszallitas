@@ -32,7 +32,7 @@ namespace PTM_Pizzakiszallitas
 			}
 
             IComparer<Rendeles> comparer = new CimHasonlito();
-            rendezendoRendelesek.Sort(comparer); // Throws exception?
+            rendezendoRendelesek.Sort(comparer);
 
 			foreach (Rendeles item in rendezendoRendelesek)
 			{

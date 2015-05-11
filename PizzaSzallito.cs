@@ -174,7 +174,7 @@ namespace PTM_Pizzakiszallitas
 				if (szabadFutar != null)
 				{
 					aktualisFutarAllapot = szabadFutar.getFutarAllapot ();
-					message = "\t\t\t#" + szabadFutar.GetHashCode () + " futár állapota: " + aktualisFutarAllapot.ToString ();
+					message = "#" + szabadFutar.GetHashCode () + " futár állapota: " + aktualisFutarAllapot.ToString ();
 					form.AppendLineToOutput (message);
 					System.Threading.Thread.Sleep (2 * 1000);
 

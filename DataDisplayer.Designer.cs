@@ -51,7 +51,7 @@
 			this.lstvwRendelesek.GridLines = true;
 			this.lstvwRendelesek.Location = new System.Drawing.Point(12, 12);
 			this.lstvwRendelesek.Name = "lstvwRendelesek";
-			this.lstvwRendelesek.Size = new System.Drawing.Size(721, 337);
+			this.lstvwRendelesek.Size = new System.Drawing.Size(603, 264);
 			this.lstvwRendelesek.TabIndex = 0;
 			this.lstvwRendelesek.UseCompatibleStateImageBehavior = false;
 			this.lstvwRendelesek.View = System.Windows.Forms.View.Details;
@@ -79,16 +79,16 @@
 			// CimUtcaNev
 			// 
 			this.CimUtcaNev.Text = "Utca";
-			this.CimUtcaNev.Width = 203;
+			this.CimUtcaNev.Width = 133;
 			// 
 			// CimHazSzam
 			// 
 			this.CimHazSzam.Text = "Házszám";
-			this.CimHazSzam.Width = 176;
+			this.CimHazSzam.Width = 129;
 			// 
 			// btnDataDisplayerClose
 			// 
-			this.btnDataDisplayerClose.Location = new System.Drawing.Point(658, 370);
+			this.btnDataDisplayerClose.Location = new System.Drawing.Point(540, 292);
 			this.btnDataDisplayerClose.Name = "btnDataDisplayerClose";
 			this.btnDataDisplayerClose.Size = new System.Drawing.Size(75, 23);
 			this.btnDataDisplayerClose.TabIndex = 1;
@@ -100,7 +100,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(745, 405);
+			this.ClientSize = new System.Drawing.Size(628, 324);
 			this.Controls.Add(this.btnDataDisplayerClose);
 			this.Controls.Add(this.lstvwRendelesek);
 			this.MaximizeBox = false;

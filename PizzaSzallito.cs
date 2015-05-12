@@ -157,6 +157,11 @@ namespace PTM_Pizzakiszallitas
 			return rendelesek;
 		}
 
+		public Varos GetVaros ()
+		{
+			return varos;
+		}
+
 		public void Main (PizzakiszallitasMainForm form)
 		{
 			Utvonalterv megtervezettUtvonal = null;

@@ -20,6 +20,8 @@ namespace PTM_Pizzakiszallitas
 			InitialisePizzaSzallito ();
 			InitialiseGUI (MainPizzaSzallito.GetRendelesek ());
 			AppendLineToOutput ("=== XML adatok beolvasva... ===");
+			InitializeCityVisualizerControl (MainPizzaSzallito.GetVaros ());
+			AppendLineToOutput ("=== Város kirajzolva... ===");
 		}
 
 		private void InitialisePizzaSzallito ()
@@ -47,6 +49,13 @@ namespace PTM_Pizzakiszallitas
 				adottRendeles = visszatoltendoek.RendelestKivesz ();
 				rendelesek.RendelestHozzaad (adottRendeles);
 			}
+
+			return;
+		}
+
+		private void InitializeCityVisualizerControl (Varos MegjelenitendoVaros)
+		{
+			cityVisualDisplayer.DrawCity (MegjelenitendoVaros);
 
 			return;
 		}

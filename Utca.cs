@@ -46,5 +46,10 @@ namespace PTM_Pizzakiszallitas
 
 			return ListIterator;
 		}
+
+		public string GetUtcaNev ()
+		{
+			return utcaNev;
+		}
     }
 }

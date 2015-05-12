@@ -33,6 +33,8 @@
 			this.btnMainFormClose = new System.Windows.Forms.Button();
 			this.btnShowData = new System.Windows.Forms.Button();
 			this.btnStartSimulation = new System.Windows.Forms.Button();
+			this.CityVisualHostElement = new System.Windows.Forms.Integration.ElementHost();
+			this.cityVisualDisplayer = new PTM_Pizzakiszallitas.CityVisual();
 			this.SuspendLayout();
 			// 
 			// tbPizzaKiszallitasOutput
@@ -83,11 +85,20 @@
 			this.btnStartSimulation.UseVisualStyleBackColor = true;
 			this.btnStartSimulation.Click += new System.EventHandler(this.btnStartSimulation_Click);
 			// 
+			// CityVisualHostElement
+			// 
+			this.CityVisualHostElement.Location = new System.Drawing.Point(15, 12);
+			this.CityVisualHostElement.Name = "CityVisualHostElement";
+			this.CityVisualHostElement.Size = new System.Drawing.Size(610, 216);
+			this.CityVisualHostElement.TabIndex = 5;
+			this.CityVisualHostElement.Child = this.cityVisualDisplayer;
+			// 
 			// PizzakiszallitasMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(637, 516);
+			this.Controls.Add(this.CityVisualHostElement);
 			this.Controls.Add(this.btnStartSimulation);
 			this.Controls.Add(this.btnShowData);
 			this.Controls.Add(this.btnMainFormClose);
@@ -108,6 +119,8 @@
 		private System.Windows.Forms.Button btnMainFormClose;
 		private System.Windows.Forms.Button btnShowData;
 		private System.Windows.Forms.Button btnStartSimulation;
+		private System.Windows.Forms.Integration.ElementHost CityVisualHostElement;
+		private CityVisual cityVisualDisplayer;
 	}
 }
 

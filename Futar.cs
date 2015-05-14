@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -21,13 +22,13 @@ namespace PTM_Pizzakiszallitas
          private FutarAllapot aktualisAllapot;
 
         //
-
+		/*
          public Futar()
          {
              aktualisAllapot = FutarAllapot.varakozik;
              szallitasiSorrend = new Utvonalterv();
          }
-
+		*/
         
         public FutarAllapot getFutarAllapot(){
             return aktualisAllapot;
@@ -49,10 +50,29 @@ namespace PTM_Pizzakiszallitas
         }
 
         // KRiSTóF által
+		private string FutarNev;
+		private Color JeloloSzin;
+
+		public Futar (string FutarNev, Color JeloloSzin)
+		{
+			aktualisAllapot = FutarAllapot.varakozik;
+			szallitasiSorrend = new Utvonalterv ();
+			this.FutarNev = FutarNev;
+			this.JeloloSzin = JeloloSzin;
+		}
+
 		public FutarAllapot RendelestFelveszUtvonaltervbe (Rendeles ujRendeles)
 		{
 			aktualisAllapot = FutarAllapot.varakozik;
 			szallitasiSorrend.RendelesHozzaadas (ujRendeles);
+
+			return aktualisAllapot;
+		}
+
+		public FutarAllapot VisszatertFutar ()
+		{
+			aktualisAllapot = FutarAllapot.varakozik;
+			szallitasiSorrend.RendelesekTorlese ();
 
 			return aktualisAllapot;
 		}
@@ -62,6 +82,16 @@ namespace PTM_Pizzakiszallitas
 			this.szallitasiSorrend = utvonalterv;
 
 			return;
+		}
+
+		public string GetFutarNev ()
+		{
+			return FutarNev;
+		}
+
+		public Color GetJeloloSzin ()
+		{
+			return JeloloSzin;
 		}
     }
 }

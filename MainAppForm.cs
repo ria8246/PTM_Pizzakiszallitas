@@ -13,6 +13,7 @@ namespace PTM_Pizzakiszallitas
 	{
 		private DataDisplayer dataDisplayer = null;
 		private PizzaSzallito MainPizzaSzallito = null;
+		private DeliverDisplayer deliverDisplayer = null;
 
 		public PizzakiszallitasMainForm ()
 		{
@@ -20,6 +21,8 @@ namespace PTM_Pizzakiszallitas
 			InitialisePizzaSzallito ();
 			InitialiseGUI (MainPizzaSzallito.GetRendelesek ());
 			AppendLineToOutput ("=== XML adatok beolvasva... ===");
+			InitializeDeliversDisplayer (MainPizzaSzallito.GetFutarok ());
+			AppendLineToOutput ("=== Futárok előkészítve... ===");
 			InitializeCityVisualizerControl (MainPizzaSzallito.GetVaros ());
 			AppendLineToOutput ("=== Város kirajzolva... ===");
 		}
@@ -49,6 +52,14 @@ namespace PTM_Pizzakiszallitas
 				adottRendeles = visszatoltendoek.RendelestKivesz ();
 				rendelesek.RendelestHozzaad (adottRendeles);
 			}
+
+			return;
+		}
+
+		private void InitializeDeliversDisplayer (Futarok futarok)
+		{
+			deliverDisplayer = new DeliverDisplayer ();
+			deliverDisplayer.InitializeDelivers (futarok);
 
 			return;
 		}
@@ -95,8 +106,16 @@ namespace PTM_Pizzakiszallitas
 		{
 			btnStartSimulation.Enabled = false;
 			this.AppendLineToOutput ("=== Szimuláció megkezdve... ===");
-			MainPizzaSzallito.Main (this);
+			this.CityVisualHostElement.Refresh ();
+			MainPizzaSzallito.Main (this, this.cityVisualDisplayer);
 			this.AppendLineToOutput ("=== Szimuláció befejezve... ===");
+
+			return;
+		}
+
+		private void btnDisplayDelivers_Click (object sender, EventArgs e)
+		{
+			deliverDisplayer.Show ();
 
 			return;
 		}

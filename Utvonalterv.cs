@@ -39,8 +39,23 @@ namespace PTM_Pizzakiszallitas
 			{
 				kovetkezo = kiszallitando [lastVisited];
 				lastVisited++;
+
 				return kovetkezo;
 			}
 		}
-    }
+
+		public void RendelesekTorlese ()
+		{
+			kiszallitando.Clear ();
+
+			return;
+		}
+
+		public int UtvonalAltalTartalmazottRendelesekSzama ()
+		{
+			int dbSzam = kiszallitando.Count;
+
+			return dbSzam;
+		}
+	}
 }

@@ -35,6 +35,7 @@
 			this.btnStartSimulation = new System.Windows.Forms.Button();
 			this.CityVisualHostElement = new System.Windows.Forms.Integration.ElementHost();
 			this.cityVisualDisplayer = new PTM_Pizzakiszallitas.CityVisual();
+			this.btnDisplayDelivers = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// tbPizzaKiszallitasOutput
@@ -67,7 +68,7 @@
 			// 
 			// btnShowData
 			// 
-			this.btnShowData.Location = new System.Drawing.Point(220, 481);
+			this.btnShowData.Location = new System.Drawing.Point(143, 481);
 			this.btnShowData.Name = "btnShowData";
 			this.btnShowData.Size = new System.Drawing.Size(197, 23);
 			this.btnShowData.TabIndex = 3;
@@ -93,11 +94,22 @@
 			this.CityVisualHostElement.TabIndex = 5;
 			this.CityVisualHostElement.Child = this.cityVisualDisplayer;
 			// 
+			// btnDisplayDelivers
+			// 
+			this.btnDisplayDelivers.Location = new System.Drawing.Point(346, 481);
+			this.btnDisplayDelivers.Name = "btnDisplayDelivers";
+			this.btnDisplayDelivers.Size = new System.Drawing.Size(144, 23);
+			this.btnDisplayDelivers.TabIndex = 6;
+			this.btnDisplayDelivers.Text = "Futárokhoz jelmagyarázat";
+			this.btnDisplayDelivers.UseVisualStyleBackColor = true;
+			this.btnDisplayDelivers.Click += new System.EventHandler(this.btnDisplayDelivers_Click);
+			// 
 			// PizzakiszallitasMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(637, 516);
+			this.Controls.Add(this.btnDisplayDelivers);
 			this.Controls.Add(this.CityVisualHostElement);
 			this.Controls.Add(this.btnStartSimulation);
 			this.Controls.Add(this.btnShowData);
@@ -121,6 +133,7 @@
 		private System.Windows.Forms.Button btnStartSimulation;
 		private System.Windows.Forms.Integration.ElementHost CityVisualHostElement;
 		private CityVisual cityVisualDisplayer;
+		private System.Windows.Forms.Button btnDisplayDelivers;
 	}
 }
 

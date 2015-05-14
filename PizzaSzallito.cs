@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -20,10 +21,26 @@ namespace PTM_Pizzakiszallitas
 		{
 			iroda = new Iroda ();
 			rendelesek = TransformRendelesDataFromSerializedToNonSerialized ("input.xml");
-			futarok = new Futarok ();
+			futarok = InitializeDelivers ();
 			varos = InitializeCity ();
 
 			return;
+		}
+
+		private Futarok InitializeDelivers ()
+		{
+			futarok = new Futarok ();
+			Futar futar1 = new Futar ("Jurij", Color.DarkCyan);
+			Futar futar2 = new Futar ("Alekszej", Color.SeaGreen);
+			Futar futar3 = new Futar ("Szasa", Color.Orange);
+			Futar futar4 = new Futar ("Lena", Color.Maroon);
+			
+			futarok.UjFutarHozzaadasa (futar1);
+			futarok.UjFutarHozzaadasa (futar2);
+			futarok.UjFutarHozzaadasa (futar3);
+			futarok.UjFutarHozzaadasa (futar4);
+
+			return futarok;
 		}
 
 		private Varos InitializeCity ()
@@ -162,7 +179,12 @@ namespace PTM_Pizzakiszallitas
 			return varos;
 		}
 
-		public void Main (PizzakiszallitasMainForm form)
+		public Futarok GetFutarok ()
+		{
+			return futarok;
+		}
+
+		public void Main (PizzakiszallitasMainForm form, CityVisual CV)
 		{
 			Utvonalterv megtervezettUtvonal = null;
 			Futar szabadFutar = null;
@@ -170,32 +192,43 @@ namespace PTM_Pizzakiszallitas
 			FutarAllapot aktualisFutarAllapot = FutarAllapot.varakozik;
 			string message = "";
 			int rendelesekSzama = 0;
+			int KovetkezoFutarIndex = 0;
 
 			rendelesekSzama = rendelesek.RendelesekSzama ();
 			for (int i = 0; i < rendelesekSzama; i++)
 			{
 				megtervezettUtvonal = iroda.UtvonalTervezes (rendelesek, 2);
-				szabadFutar = futarok.KovetkezoFutar ();
+				if (megtervezettUtvonal.UtvonalAltalTartalmazottRendelesekSzama () == 0)
+				{
+					break;
+				}
+				szabadFutar = futarok.KovetkezoFutar (KovetkezoFutarIndex);
+				KovetkezoFutarIndex = Futarok.KovetkezoIndex (KovetkezoFutarIndex, futarok.FutarokSzama ());
 				if (szabadFutar != null)
 				{
 					aktualisFutarAllapot = szabadFutar.getFutarAllapot ();
-					message = "#" + szabadFutar.GetHashCode () + " futár állapota: " + aktualisFutarAllapot.ToString ();
+					message = szabadFutar.GetFutarNev () + " állapota: " + aktualisFutarAllapot.ToString ();
 					form.AppendLineToOutput (message);
 					System.Threading.Thread.Sleep (2 * 1000);
 
 					szabadFutar.UtvonaltervetFelvesz (megtervezettUtvonal);
 					aktualisFutarAllapot = iroda.FutartIndit (szabadFutar);
-					message = "#" + szabadFutar.GetHashCode () + " futár állapota: " + szabadFutar.getFutarAllapot ().ToString ();
+					message = szabadFutar.GetFutarNev () + " állapota: " + szabadFutar.getFutarAllapot ().ToString ();
 					form.AppendLineToOutput (message);
 					System.Threading.Thread.Sleep (2 * 1000);
 
 					while ((aktualisRendeles = szabadFutar.getSzallitasiSorrend ().KovetkezoRendeles ()) != null)
 					{
-						message = "\t#" + szabadFutar.GetHashCode () + " futár tartózkodási helye: " + aktualisRendeles.RendelesiCim ().ToString ();
+						CV.VisitCity (szabadFutar, aktualisRendeles);
+						message = "\t" + szabadFutar.GetFutarNev () + " tartózkodási helye: " + aktualisRendeles.RendelesiCim ().ToString ();
 						form.AppendLineToOutput (message);
 						System.Threading.Thread.Sleep (2 * 1000);
 					}
-					message = "\t\t#" + szabadFutar.GetHashCode () + " futár állapota: " + szabadFutar.VisszafeleMegy ().ToString ();
+					message = szabadFutar.GetFutarNev () + " állapota: " + szabadFutar.VisszafeleMegy ().ToString ();
+					form.AppendLineToOutput (message);
+					System.Threading.Thread.Sleep (2 * 1000);
+					
+					message = szabadFutar.GetFutarNev () + " állapota: " + szabadFutar.VisszatertFutar ().ToString ();
 					form.AppendLineToOutput (message);
 					System.Threading.Thread.Sleep (2 * 1000);
 				}
